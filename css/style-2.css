@@ -1,0 +1,103 @@
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(240, 248, 255);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    color: black;
+    transition: all 1s;
+  }
+  .overlay section img{
+    width: 30%;
+    object-fit: cover;
+    max-height: 500px;
+    
+  }
+
+  .overlay section{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 5rem;
+    padding: 0 .5rem;
+    
+  }
+  .overlay h2{
+    font-size: 40px;
+    margin-top: 4rem;
+    padding-left: 1rem;
+   }
+  @media screen and (max-width: 730px){
+    .overlay section{
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .overlay h2{
+      font-size: 40px;
+      margin-top: 5rem;
+      padding-left: 1rem;
+     }
+    .specs{
+        padding-left: 1rem;
+    }
+    .overlay section img{
+        width: 100%;
+         padding: 0;
+        height: 100%;
+        object-fit: cover;
+        align-self: center;
+        flex-grow: 1;
+        margin-bottom: 2rem;
+      }
+  }
+
+
+  .specs-h3{
+    font-size: 20px;
+    margin-bottom: 1rem;
+    padding: 10px 10px;
+    background-color: black;
+    width: 100%;
+    color: #ff0080;
+  }
+  .specs{
+    line-height: 2rem;
+  }
+  .specs p{
+    font-size: 16px;
+  }
+  .downloadbtn{
+    padding: 10px 10px;
+    background-color: black;
+    color: #ff0080;
+    font-size: 20px;
+    text-decoration: none;
+    
+  }
+  .downloadbtn:hover{
+    color: red;
+    
+  }
+
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
